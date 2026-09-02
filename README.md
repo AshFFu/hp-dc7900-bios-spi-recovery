@@ -80,3 +80,4 @@ This project documents an independent hardware repair and research process.
 HP, Intel, and other trademarks belong to their respective owners. This project is not affiliated with or endorsed by HP or Intel.
 
 Firmware modification and external SPI programming involve a risk of permanent hardware failure. The information in this repository is provided for technical research and repair reference.
+
