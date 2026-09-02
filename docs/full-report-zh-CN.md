@@ -656,10 +656,6 @@ Pin4 GND
 
 *图 3 — B 机 U19 / U21 区域，U19 左侧 Pin 1–4 焊盘脱落的整体状态。*
 
-![图 5B：B 机 U19 左侧四焊盘损伤局部](../images/05b-b-u19-four-pad-damage.jpg)
-
-*图 5B — B 机 U19 左侧四个损伤焊盘的局部细节。*
-
 后续发现一个很关键的 PCB 结构事实：
 
 **U21 部分信号并不是绕过 U19 焊盘以后独立直达芯片组。**
@@ -733,9 +729,9 @@ A 主要损伤：
 U19 Pin3 / WP#
 ```
 
-![图 5A：A 机 U19 Pin3 / WP# 焊盘损伤](../images/05a-a-u19-wp-pad-damage.jpg)
+![图 5：A 机 U19 Pin3 / WP# 焊盘损伤](../images/05-a-u19-pin3-wp-pad-damage.jpg)
 
-*图 5A — A 机 U19 / U21 区域，主要损伤集中在 U19 Pin 3 / WP#。*
+*图 5 — A 机 U19 / U21 区域，主要损伤集中在 U19 Pin 3 / WP#。*
 
 WP# 不是正常 SPI Read 所需的数据线。
 

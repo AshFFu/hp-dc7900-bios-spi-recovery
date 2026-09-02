@@ -54,8 +54,7 @@
 | 图 2 | [`02-ezp2019-plus-programmer.jpg`](02-ezp2019-plus-programmer.jpg) | 本项目使用的 EZP2019+ USB SPI 编程器 |
 | 图 3 | [`03-b-u19-u21-pad-damage.jpg`](03-b-u19-u21-pad-damage.jpg) | B 机 U19 / U21 区域及 U19 左侧焊盘损伤 |
 | 图 4 | [`04-b-u19-u21-signal-map.jpg`](04-b-u19-u21-signal-map.jpg) | B 机损伤区域的 CS# / MISO / WP# / GND 信号标注 |
-| 图 5A | [`05a-a-u19-wp-pad-damage.jpg`](05a-a-u19-wp-pad-damage.jpg) | A 机 U19 区域，主要损伤为 Pin 3 / WP# 焊盘 |
-| 图 5B | [`05b-b-u19-four-pad-damage.jpg`](05b-b-u19-four-pad-damage.jpg) | B 机 U19 左侧四个焊盘损伤局部 |
+| 图 5 | [`05-a-u19-pin3-wp-pad-damage.jpg`](05-a-u19-pin3-wp-pad-damage.jpg) | A 机 U19 区域，主要损伤为 Pin 3 / WP# 焊盘 |
 | 图 6 | [`06-fitc-5.0.0.1167-platform-select.jpg`](06-fitc-5.0.0.1167-platform-select.jpg) | Intel FITC 5.0.0.1167 Platform Select |
 | 图 7 | [`07-b-first-post-after-oem-me-replacement.jpg`](07-b-first-post-after-oem-me-replacement.jpg) | B 机替换完整 HP OEM ME Region 后首次越过原冻结点 |
 | 图 8 | [`08-heci-2233-2206-transient-error.jpg`](08-heci-2233-2206-transient-error.jpg) | 修复早期一次性的 2233 / 2206 HECI / MEBx 错误 |
@@ -151,9 +150,9 @@ SOP16 器件的其余 NC 引脚不参与上述 SPI 信号恢复。
 
 ---
 
-## 图 5A — A 机 U19 Pin 3 / WP# 焊盘损伤
+## 图 5 — A 机 U19 Pin 3 / WP# 焊盘损伤
 
-![A board U19 WP pad damage](05a-a-u19-wp-pad-damage.jpg)
+![A board U19 WP pad damage](05-a-u19-pin3-wp-pad-damage.jpg)
 
 A 机的焊盘损伤程度明显轻于 B 机。
 
@@ -162,16 +161,6 @@ A 机的焊盘损伤程度明显轻于 B 机。
 **U19 Pin 3 / WP#**
 
 因此 A 机的 PCB 修复复杂度低于 B 机，并未出现 B 机那种左侧四个焊盘同时脱落的情况。
-
----
-
-## 图 5B — B 机 U19 左侧四焊盘损伤
-
-![B board U19 four pad damage](05b-b-u19-four-pad-damage.jpg)
-
-该局部图进一步显示 B 机 U19 左侧焊盘的实际损伤情况。
-
-这组照片用于记录为什么 B 机最终必须采用飞线 / 替代节点方式恢复 SPI 电气连接，而不能仅依靠原焊盘重新安装 Flash。
 
 ---
 
