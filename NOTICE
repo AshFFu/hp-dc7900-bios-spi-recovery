@@ -1,0 +1,32 @@
+HP Compaq dc7900 BIOS / SPI Flash Recovery
+NOTICE
+
+Copyright (c) 2026 AshFFu
+
+This repository documents an independent hardware-repair and firmware-analysis
+project.
+
+The MIT License in LICENSE applies to the original material authored for this
+repository, including project documentation, original scripts, annotations,
+and original photographs, except where third-party rights apply.
+
+The repository does not grant any rights in third-party material, including:
+
+- HP or Intel firmware, binaries, trademarks, logos, or product names;
+- third-party software, user interfaces, or other material visible in
+  screenshots;
+- vendor documentation or other third-party works referenced by the project.
+
+HP, Intel, Macronix, and other product or company names are used only for
+technical identification. Their trademarks and other rights remain with their
+respective owners.
+
+Complete HP / Intel firmware packages, complete machine SPI dumps, and
+machine-specific reconstructed recovery BIN files are not distributed in this
+repository.
+
+Machine-specific identifiers in public materials have been removed or
+redacted where appropriate.
+
+This project is not affiliated with, sponsored by, endorsed by, or supported
+by HP or Intel.
