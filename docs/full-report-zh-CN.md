@@ -1,6 +1,6 @@
 # HP Compaq dc7900 USDT POST 卡死 / Intel ME 修复项目完整技术报告
 
-[返回文档目录](README.md)
+[返回文档目录](README.md) | [图像证据档案](../images/README.md)
 
 > **项目周期：2026-08-19 — 2026-09-02**  
 > **文档版本：1.0 / 项目结案版**  
@@ -418,6 +418,10 @@ SOP16
 3.3 V
 ```
 
+![图 1：MX25L3205DMI-12G SOP16 SPI Flash](../images/01-mx25l3205dmi-12g-sop16.jpg)
+
+*图 1 — 本项目后期实际使用的 Macronix MX25L3205DMI-12G SOP16 SPI Flash。*
+
 ---
 
 ## 4.2 U19 ↔ U21 信号映射
@@ -445,6 +449,10 @@ SOP16 其它：
 为 NC。
 
 这个映射后来成为 B 机 U19 焊盘损伤后恢复 SPI 总线的关键。
+
+![图 4：B 机 U19 / U21 信号映射](../images/04-b-u19-u21-signal-map.jpg)
+
+*图 4 — B 机 U19 / U21 区域的技术标注图，标出损伤侧的 CS# / MISO / WP# / GND 信号关系。*
 
 ---
 
@@ -535,6 +543,10 @@ SHA-256 完全一致
 ```text
 EZP2019+
 ```
+
+![图 2：EZP2019+ USB SPI 编程器](../images/02-ezp2019-plus-programmer.jpg)
+
+*图 2 — 本项目用于离线读取、擦除、写入和回读验证的 EZP2019+ USB SPI 编程器。*
 
 曾经出现一个非常容易误判的问题。
 
@@ -640,6 +652,14 @@ Pin3 WP#
 Pin4 GND
 ```
 
+![图 3：B 机 U19 / U21 区域焊盘损伤](../images/03-b-u19-u21-pad-damage.jpg)
+
+*图 3 — B 机 U19 / U21 区域，U19 左侧 Pin 1–4 焊盘脱落的整体状态。*
+
+![图 5B：B 机 U19 左侧四焊盘损伤局部](../images/05b-b-u19-four-pad-damage.jpg)
+
+*图 5B — B 机 U19 左侧四个损伤焊盘的局部细节。*
+
 后续发现一个很关键的 PCB 结构事实：
 
 **U21 部分信号并不是绕过 U19 焊盘以后独立直达芯片组。**
@@ -712,6 +732,10 @@ A 主要损伤：
 ```text
 U19 Pin3 / WP#
 ```
+
+![图 5A：A 机 U19 Pin3 / WP# 焊盘损伤](../images/05a-a-u19-wp-pad-damage.jpg)
+
+*图 5A — A 机 U19 / U21 区域，主要损伤集中在 U19 Pin 3 / WP#。*
 
 WP# 不是正常 SPI Read 所需的数据线。
 
@@ -1113,6 +1137,10 @@ McCreary - EL ICH10D
 Boulder Creek - EL ICH10
 ```
 
+![图 6：Intel FITC 5.0.0.1167 Platform Select](../images/06-fitc-5.0.0.1167-platform-select.jpg)
+
+*图 6 — Intel Flash Image Tool 5.0.0.1167 的 Platform Select；本项目使用 Boulder Creek - EL ICH10。*
+
 ---
 
 ## 8.2 故障 B 镜像关键日志
@@ -1340,6 +1368,10 @@ F1 Save Changes
 
 **机器已经继续运行到了过去永远无法到达的位置。**
 
+![图 7：替换完整 HP OEM ME Region 后首次越过原冻结点](../images/07-b-first-post-after-oem-me-replacement.jpg)
+
+*图 7 — B 机写入完整 HP OEM 健康 ME Region 后，首次跨过原先固定冻结的 POST 阶段。*
+
 按 F1 保存以后：
 
 - 自动重启；
@@ -1361,6 +1393,10 @@ F1 Save Changes
 MEBX Status = 0302
 2206-End Of POST HECI Failure
 ```
+
+![图 8：2233 / 2206 暂态 HECI / MEBx 错误](../images/08-heci-2233-2206-transient-error.jpg)
+
+*图 8 — 修复初期曾出现的一次性 2233 / 2206 HECI / MEBx 错误；后续冷、热启动中未再复现。*
 
 后续：
 
@@ -1426,11 +1462,19 @@ hbm_ver:
 1.0
 ```
 
+![图 9：Linux 下 HECI PCI / mei_me / dev mei0 验证](../images/09-linux-heci-pci-mei.jpg)
+
+*图 9 — Linux 下 Intel 4 Series HECI `[8086:2e14]` 正常枚举，`mei_me` 驱动绑定并建立 `/dev/mei0`。*
+
 `fw_ver` 曾返回：
 
 ```text
 0:0.0.0.0
 ```
+
+![图 10：Linux MEI sysfs 最终状态](../images/10-linux-mei-sysfs-status.jpg)
+
+*图 10 — Linux MEI sysfs 验证：`dev_state`、`fw_status`、`hbm_ver` 与 `fw_ver` 的最终现场结果。*
 
 对于 ME5 / 老驱动接口，不能仅凭这个字段判断：
 
